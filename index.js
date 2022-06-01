@@ -1,13 +1,33 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+    const seenNumbers = new Set(); // initialize an empty Set
+    for (const number of array) {
+      const complement = target - number;
+  
+      // .has returns true if the Set includes the complement
+      if (seenNumbers.has(complement)) return true;
+  
+      // .add adds the number to the Set
+      seenNumbers.add(number);
+    }
+    return false;
+  }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
   Add your pseudocode here
+  initialize empty set
+  seenNumbers = new Set()
+  for(number of array){
+    compliment = target - number
+    if (seenNumbers has compliment) return true
+    add number to set of seenNumbers
+  }
+  return false if no compliment found by end of array
 */
 
 /*
